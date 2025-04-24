@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/instance: apr24-quarkus-database
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: apr24-quarkus-database
+  name: apr24-quarkus-database
+spec:
+  ports:
+    - port: 
+      protocol: TCP
+      targetPort: 
+  selector:
+    app.kubernetes.io/instance: apr24-quarkus-database

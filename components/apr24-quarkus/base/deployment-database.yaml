@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: apr24-quarkus-database
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: apr24-quarkus-database
+    app.kubernetes.io/part-of: apr24-quarkus
+  name: apr24-quarkus-database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: apr24-quarkus-database
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: apr24-quarkus-database
+    spec:
+      containers:
+        - image: 
+          name: database
+          args: ["--workers", "1", "--host", "0.0.0.0", "--port", "", "--proxy-headers", "--log-config", "chromadb/log_config.yml", "--timeout-keep-alive", "30"]
+          ports:
+            - containerPort: 
+          securityContext:
+            runAsNonRoot: true

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apr24-quarkus-database-config
+data:
+  VECTORDB_HOST: "apr24-quarkus-database"
+  VECTORDB_PORT: ""
